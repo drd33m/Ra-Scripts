@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Upload image from upload page
-// @version      1.7.1_ra
+// @version      1.7
 // @description  Upload album art from within the PTH upload page
 // @author       Chameleon
 // @include      http*://*redacted.ch/upload.php*
@@ -8,10 +8,9 @@
 // @include      http*://*redacted.ch/artist.php*action=edit*
 // @include      http*://*redacted.ch/torrents.php*action=editgroup*
 // @include      http*://*orpheus.network/upload.php*
-// @include      http*://*orpheus.network/forums.php*threadid=1725*
+// @include      http*://*orpheus.network/forums.php*threadid=4122*
 // @include      http*://*orpheus.network/artist.php*action=edit*
 // @include      http*://*orpheus.network/torrents.php*action=editgroup*
-// @updateURL    https://raw.githubusercontent.com/The-Sun-God/Ra-Scripts/master/userscripts/upload_image_from_upload_page.js
 // @grant        GM_xmlhttpRequest
 // @namespace https://greasyfork.org/users/87476
 // ==/UserScript==
@@ -144,7 +143,11 @@ function changeSite(a, div)
 {
     if(a.innerHTML.indexOf('imgur.com') != -1)
     {
-        a.innerHTML = a.innerHTML.replace('imgur.com', 'thesungod.xyz');
+        a.innerHTML = a.innerHTML.replace('imgur.com', 'ptpimg.me');
+    }
+    else if(a.innerHTML.indexOf('ptpimg.me') != -1)
+    {
+        return a.innerHTML = a.innerHTML.replace('ptpimg.me', 'thesungod.xyz');
     }
     else if(a.innerHTML.indexOf('thesungod.xyz') != -1)
     {
