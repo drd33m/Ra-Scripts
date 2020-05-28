@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Upload image from upload page
-// @version      1.7
+// @version      1.7.1_ra
 // @description  Upload album art from within the PTH upload page
 // @author       Chameleon
 // @include      http*://*redacted.ch/upload.php*
@@ -11,6 +11,7 @@
 // @include      http*://*orpheus.network/forums.php*threadid=1725*
 // @include      http*://*orpheus.network/artist.php*action=edit*
 // @include      http*://*orpheus.network/torrents.php*action=editgroup*
+// @updateURL    https://raw.githubusercontent.com/The-Sun-God/Ra-Scripts/master/userscripts/upload_image_from_upload_page.js
 // @grant        GM_xmlhttpRequest
 // @namespace https://greasyfork.org/users/87476
 // ==/UserScript==
