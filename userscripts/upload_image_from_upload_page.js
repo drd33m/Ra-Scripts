@@ -11,6 +11,7 @@
 // @include      http*://*orpheus.network/forums.php*threadid=4122*
 // @include      http*://*orpheus.network/artist.php*action=edit*
 // @include      http*://*orpheus.network/torrents.php*action=editgroup*
+// @updateURL    https://raw.githubusercontent.com/The-Sun-God/Ra-Scripts/master/userscripts/upload_image_from_upload_page.js
 // @grant        GM_xmlhttpRequest
 // @namespace https://greasyfork.org/users/87476
 // ==/UserScript==
