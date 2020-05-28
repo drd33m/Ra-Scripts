@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Upload image from upload page
-// @version      1.7
+// @version      1.7.1_drd33m
 // @description  Upload album art from within the PTH upload page
 // @author       Chameleon
 // @include      http*://*redacted.ch/upload.php*
@@ -99,7 +99,6 @@ function showSettings(message)
     _input.value = settings.ra_apiKey ? settings.ra_apiKey:'';
     div.appendChild(_input);
     _input.addEventListener('keyup', changeSettings.bind(undefined, div), false);
-    console.log(settings.ra_apiKey)
 
     var __a=document.createElement('a');
     __a.href='javascript:void(0);';
@@ -142,19 +141,17 @@ function gotAPIKey(input, span, div, response)
 
 function changeSite(a, div)
 {
-    if(a.innerHTML.indexOf('imgur.com') != -1)
-    {
-        a.innerHTML = a.innerHTML.replace('imgur.com', 'ptpimg.me');
+    switch (a.innerText) {
+        case "Use image host: imgur.com":
+            a.innerHTML = a.innerHTML.replace('imgur.com', 'ptpimg.me');
+            break;
+        case "Use image host: ptpimg.me":
+            a.innerHTML = a.innerHTML.replace('ptpimg.me', 'thesungod.xyz');
+            break;
+        case "Use image host: thesungod.xyz":
+            a.innerHTML = a.innerHTML.replace('thesungod.xyz', 'imgur.com');
+            break;
     }
-    else if(a.innerHTML.indexOf('ptpimg.me') != -1)
-    {
-        return a.innerHTML = a.innerHTML.replace('ptpimg.me', 'thesungod.xyz');
-    }
-    else if(a.innerHTML.indexOf('thesungod.xyz') != -1)
-    {
-        a.innerHTML = a.innerHTML.replace('thesungod.xyz', 'imgur.com');
-    }
-
     changeSettings(div);
 }
 
@@ -345,7 +342,6 @@ function rehost(imageInput, span)
                 "Content-Type": "application/x-www-form-urlencoded"
             },
             onload: function(response) {
-                console.log(response)
                 rehosted(imageInput, span, response.responseText); }
         });
     }
@@ -490,7 +486,6 @@ function upload(status, file)
         "Content-Type": "multipart/form-data"
       },*/
             onload: function(response) {
-                console.log(response)
                 if(response.status == 200)
                 {
                     uploaded(status, response.responseText);
@@ -510,7 +505,6 @@ function upload(status, file)
 function uploaded(status, response)
 {
     var settings=getSettings();
-    console.log(response);
     var newLink='';
     try
     {
