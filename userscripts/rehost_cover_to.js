@@ -1,23 +1,22 @@
 // ==UserScript==
 // @name         Rehost cover to...
-// @version      0.82a
+// @version      0.82.1a_drd33m
 // @description  Rehost an existing cover image to a whitelisted site
 // @author       Chameleon
 // @include      http*://*redacted.ch/torrents.php?id=*
 // @include      http*://*apollo.rip/torrents.php?id=*
 // @include      http*://*orpheus.network/torrents.php?id=*
-// @include      http*://*redacted.ch/forums.php?*threadid=1737*
+// @include      http*://*redacted.ch/forums.php?*threadid=1859*
 // @include      http*://*apollo.rip/forums.php?*threadid=4122*
 // @include      http*://*orpheus.network/forums.php?*threadid=113*
+// @updateURL    https://raw.githubusercontent.com/The-Sun-God/Ra-Scripts/master/userscripts/rehost_cover_to.js
 // @grant        GM_xmlhttpRequest
 // @namespace https://greasyfork.org/users/87476
 // ==/UserScript==
 
 (function() {
     'use strict';
-    showSettings();
-    console.log(window.location)
-    if(window.location.href.indexOf("threadid=6532") != -1)
+    if(window.location.href.indexOf("threadid=1859") != -1)
         showSettings();
     if(window.location.href.indexOf("threadid=4122") != -1)
         showSettings();
