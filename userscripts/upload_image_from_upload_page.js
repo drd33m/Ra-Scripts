@@ -8,7 +8,7 @@
 // @include      http*://*redacted.ch/artist.php*action=edit*
 // @include      http*://*redacted.ch/torrents.php*action=editgroup*
 // @include      http*://*orpheus.network/upload.php*
-// @include      http*://*orpheus.network/forums.php*threadid=4122*
+// @include      http*://*orpheus.network/forums.php*threadid=1859*
 // @include      http*://*orpheus.network/artist.php*action=edit*
 // @include      http*://*orpheus.network/torrents.php*action=editgroup*
 // @updateURL    https://raw.githubusercontent.com/The-Sun-God/Ra-Scripts/master/userscripts/upload_image_from_upload_page.js
@@ -32,7 +32,7 @@ unsafeWindow.Categories=function c(){
 
     if(settings.showSettings) showSettings();
 
-    if(window.location.href.indexOf("threadid=1725") != -1) showSettings();
+    if(window.location.href.indexOf("threadid=1859") != -1) showSettings();
 
     else if(window.location.href.indexOf('upload.php') != -1)
     {
